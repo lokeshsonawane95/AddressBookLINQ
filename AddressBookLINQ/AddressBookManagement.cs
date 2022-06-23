@@ -49,5 +49,46 @@ namespace AddressBookLINQ
             DataTable dataTableupdated = datatable.AsEnumerable().Except(datatable.AsEnumerable().Where(r => r.Field<string>("firstName") == "John" && r.Field<string>("lastName") == "Connor")).CopyToDataTable();
             return dataTableupdated;
         }
+
+        public void ContactDetailsByCityOrState(DataTable dataTable)
+        {
+            var recordedDataCity = dataTable.AsEnumerable().Where(r => r.Field<string>("city") == "Mumbai");
+            var recordedDataState = dataTable.AsEnumerable().Where(r => r.Field<string>("state") == "Maharashtra");
+            
+            Console.Write("\nGet Details\nPress 1 for by City\nPress other integer for by State : ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
+            {
+                Console.WriteLine("Contact details by City :\n");
+                foreach (var data in recordedDataCity)
+                {
+                    Console.WriteLine("First Name : " + data.Field<string>("firstName"));
+                    Console.WriteLine("Last Name : " + data.Field<string>("lastName"));
+                    Console.WriteLine("Address : " + data.Field<string>("address"));
+                    Console.WriteLine("City : " + data.Field<string>("city"));
+                    Console.WriteLine("State : " + data.Field<string>("state"));
+                    Console.WriteLine("Zip : " + Convert.ToInt32(data.Field<int>("zip")));
+                    Console.WriteLine("Phone Number : " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
+                    Console.WriteLine("eMail : " + data.Field<string>("eMail"));
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Contact details by State :\n");
+                foreach (var data in recordedDataState)
+                {
+                    Console.WriteLine("First Name : " + data.Field<string>("firstName"));
+                    Console.WriteLine("Last Name : " + data.Field<string>("lastName"));
+                    Console.WriteLine("Address : " + data.Field<string>("address"));
+                    Console.WriteLine("City : " + data.Field<string>("city"));
+                    Console.WriteLine("State : " + data.Field<string>("state"));
+                    Console.WriteLine("Zip : " + Convert.ToInt32(data.Field<int>("zip")));
+                    Console.WriteLine("Phone Number : " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
+                    Console.WriteLine("eMail : " + data.Field<string>("eMail"));
+                    Console.WriteLine();
+                }
+            }
+        }
     }
 }

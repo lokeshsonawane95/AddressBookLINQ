@@ -73,8 +73,11 @@ namespace AddressBookLINQ
             //addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
 
             // UC5 delete data
-            addressBookTable = addressBookManagement.DeletedContacts(addressBookTable);
-            addressBookManagement.DisplayAllData(addressBookTable);
+            //addressBookTable = addressBookManagement.DeletedContacts(addressBookTable);
+            //addressBookManagement.DisplayAllData(addressBookTable);
+
+            // UC6 contact details by city or by state
+            addressBookManagement.ContactDetailsByCityOrState(addressBookTable);
         }
     }
 }
