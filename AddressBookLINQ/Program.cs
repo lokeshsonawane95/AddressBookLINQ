@@ -2,7 +2,7 @@
 
 namespace AddressBookLINQ
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -65,6 +65,14 @@ namespace AddressBookLINQ
             addressBookTable.Rows.Add("Lok", "Son", "Kothrud", "Pune", "Maharashtra", 411040, 7745612309, "lok.son@gmail.com");
             addressBookTable.Rows.Add("Ahan", "Mishra", "Begampura", "Delhi", "Dehli", 465123, 8420165978, "ahan.mishra@gmail.com");
             addressBookTable.Rows.Add("Vicky", "Kaushal", "Andheri", "Mumbai", "Maharashtra", 751320, 9632201579, "vicky.kaushal@gmail.com");
+
+
+            AddressBookManagement addressBookManagement = new AddressBookManagement();
+
+            // UC4 update data
+            addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
+
+            addressBookManagement.DisplayAllData(addressBookTable);
         }
     }
 }
