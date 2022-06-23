@@ -77,7 +77,10 @@ namespace AddressBookLINQ
             //addressBookManagement.DisplayAllData(addressBookTable);
 
             // UC6 contact details by city or by state
-            addressBookManagement.ContactDetailsByCityOrState(addressBookTable);
+            //addressBookManagement.ContactDetailsByCityOrState(addressBookTable);
+
+            // UC7 count contact details by city or by state
+            addressBookManagement.CountDetailsByCityOrState(addressBookTable);
         }
     }
 }

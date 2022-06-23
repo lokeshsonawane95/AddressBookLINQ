@@ -90,5 +90,20 @@ namespace AddressBookLINQ
                 }
             }
         }
+
+        public void CountDetailsByCityOrState(DataTable dataTable)
+        {
+            var recordedData = from data in dataTable.AsEnumerable()
+                               group data by new { city = data.Field<string>("city"), state = data.Field<string>("state") } into g
+                               select new { city = g.Key, count = g.Count() };
+
+            foreach (var data in recordedData.AsEnumerable())
+            {
+                Console.WriteLine("City : " + data.city.city);
+                Console.WriteLine("State : " + data.city.state);
+                Console.WriteLine("Count : " + data.count);
+                Console.WriteLine();
+            }
+        }
     }
 }
