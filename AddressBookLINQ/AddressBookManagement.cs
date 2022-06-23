@@ -43,5 +43,11 @@ namespace AddressBookLINQ
                 Console.WriteLine();
             }
         }
+
+        public DataTable DeletedContacts(DataTable datatable)
+        {
+            DataTable dataTableupdated = datatable.AsEnumerable().Except(datatable.AsEnumerable().Where(r => r.Field<string>("firstName") == "John" && r.Field<string>("lastName") == "Connor")).CopyToDataTable();
+            return dataTableupdated;
+        }
     }
 }

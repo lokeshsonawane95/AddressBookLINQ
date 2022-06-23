@@ -70,8 +70,10 @@ namespace AddressBookLINQ
             AddressBookManagement addressBookManagement = new AddressBookManagement();
 
             // UC4 update data
-            addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
+            //addressBookTable = addressBookManagement.UpdatedContactDetails(addressBookTable);
 
+            // UC5 delete data
+            addressBookTable = addressBookManagement.DeletedContacts(addressBookTable);
             addressBookManagement.DisplayAllData(addressBookTable);
         }
     }
