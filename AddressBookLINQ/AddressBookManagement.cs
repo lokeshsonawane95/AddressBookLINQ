@@ -105,5 +105,23 @@ namespace AddressBookLINQ
                 Console.WriteLine();
             }
         }
+
+        public void SortedDetails(DataTable dataTable)
+        {
+            var recordedData = dataTable.AsEnumerable().Where(r => r.Field<string>("city") == "Mumbai").OrderBy(r => r.Field<string>("firstName")).ThenBy(r => r.Field<string>("lastName"));
+
+            foreach (var data in recordedData)
+            {
+                Console.WriteLine("First Name : " + data.Field<string>("firstName"));
+                Console.WriteLine("Last Name : " + data.Field<string>("lastName"));
+                Console.WriteLine("Address : " + data.Field<string>("address"));
+                Console.WriteLine("City : " + data.Field<string>("city"));
+                Console.WriteLine("State : " + data.Field<string>("state"));
+                Console.WriteLine("Zip : " + Convert.ToInt32(data.Field<int>("zip")));
+                Console.WriteLine("Phone Number : " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
+                Console.WriteLine("eMail : " + data.Field<string>("eMail"));
+                Console.WriteLine();
+            }
+        }
     }
 }

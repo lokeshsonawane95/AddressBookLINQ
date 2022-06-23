@@ -80,7 +80,10 @@ namespace AddressBookLINQ
             //addressBookManagement.ContactDetailsByCityOrState(addressBookTable);
 
             // UC7 count contact details by city or by state
-            addressBookManagement.CountDetailsByCityOrState(addressBookTable);
+            //addressBookManagement.CountDetailsByCityOrState(addressBookTable);
+
+            // UC8 sorted data
+            addressBookManagement.SortedDetails(addressBookTable);
         }
     }
 }
