@@ -57,6 +57,14 @@ namespace AddressBookLINQ
             PrimaryKeyColumns[0] = addressBookTable.Columns["firstName"];
             PrimaryKeyColumns[1] = addressBookTable.Columns["phoneNumber"];
             addressBookTable.PrimaryKey = PrimaryKeyColumns;
+
+
+            addressBookTable.Rows.Add("Lokesh", "Sonawane", "Warje", "Pune", "Maharashtra", 411058, 9876543210, "lokesh.sonawane@gmail.com");
+            addressBookTable.Rows.Add("Mohak", "Mangal", "Hennur", "Bengaluru", "Karnataka", 410253, 9513064780, "mohak.mangal@gmail.com");
+            addressBookTable.Rows.Add("John", "Connor", "Andheri", "Mumbai", "Maharashtra", 400256, 7532016498, "john.connor@gmail.com");
+            addressBookTable.Rows.Add("Lok", "Son", "Kothrud", "Pune", "Maharashtra", 411040, 7745612309, "lok.son@gmail.com");
+            addressBookTable.Rows.Add("Ahan", "Mishra", "Begampura", "Delhi", "Dehli", 465123, 8420165978, "ahan.mishra@gmail.com");
+            addressBookTable.Rows.Add("Vicky", "Kaushal", "Andheri", "Mumbai", "Maharashtra", 751320, 9632201579, "vicky.kaushal@gmail.com");
         }
     }
 }
